@@ -1,5 +1,5 @@
-#if !defined(EXPORT_H)
-#define EXPORT_H
+#if !defined(WRAP_H)
+#define WRAP_H
 #if _MSC_VER > 1000
 #pragma once
 #endif // _MSC_VER > 1000

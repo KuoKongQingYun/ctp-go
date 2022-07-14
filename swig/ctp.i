@@ -3,7 +3,7 @@
 #include <iconv.h>
 #include "ThostFtdcMdApi.h"
 #include "ThostFtdcTraderApi.h"
-#include "../../wrap/wrap.h"
+// #include "../../wrap/wrap.h"
 #include "string_array.h"
 %}
 
@@ -11,9 +11,9 @@
 %{
 #cgo CFLAGS:-fvisibility=hidden -O2
 #cgo amd64 CFLAGS: -m64
-#cgo amd64 LDFLAGS: -L${SRCDIR}/swig -L${SRCDIR}/wrap
+#cgo amd64 LDFLAGS: -L${SRCDIR}/swig
 #cgo CFLAGS: -I${SRCDIR}/swig
-#cgo LDFLAGS: -static -lctpwrapgo -lwrap -liconv -lstdc++
+#cgo LDFLAGS: -static -lctpwrapgo -lthosttraderapi_se -lthostmduserapi_se -liconv -lstdc++
 %}
 
 %insert(cgo_comment_typedefs)
@@ -70,8 +70,8 @@
 
 %feature("director") CThostFtdcMdSpi; 
 %feature("director") CThostFtdcTraderSpi;
-%ignore CThostFtdcMdApi;
-%ignore CThostFtdcTraderApi;
+// %ignore CThostFtdcMdApi;
+// %ignore CThostFtdcTraderApi;
 %ignore THOST_FTDC_VTC_BankBankToFuture;
 %ignore THOST_FTDC_VTC_BankFutureToBank;
 %ignore THOST_FTDC_VTC_FutureBankToFuture;
@@ -84,4 +84,4 @@
 %include "ThostFtdcUserApiStruct.h"
 %include "ThostFtdcMdApi.h"
 %include "ThostFtdcTraderApi.h"
-%include "../../wrap/wrap.h"
+// %include "../../wrap/wrap.h"
