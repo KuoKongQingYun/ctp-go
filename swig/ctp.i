@@ -3,7 +3,7 @@
 #include <iconv.h>
 #include "ThostFtdcMdApi.h"
 #include "ThostFtdcTraderApi.h"
-// #include "../../wrap/wrap.h"
+#include "../../wrap/wrap.h"
 #include "string_array.h"
 %}
 
@@ -11,9 +11,9 @@
 %{
 #cgo CFLAGS:-fvisibility=hidden -O2
 #cgo amd64 CFLAGS: -m64
-#cgo amd64 LDFLAGS: -L${SRCDIR}/swig
+#cgo amd64 LDFLAGS: -L${SRCDIR}/swig -L${SRCDIR}/wrap
 #cgo CFLAGS: -I${SRCDIR}/swig
-#cgo LDFLAGS: -static -lctpwrapgo -lthosttraderapi_se -lthostmduserapi_se -liconv -lstdc++
+#cgo LDFLAGS: -static -lctpwrapgo -lwrap -liconv -lstdc++
 %}
 
 %insert(cgo_comment_typedefs)
@@ -84,4 +84,4 @@
 %include "ThostFtdcUserApiStruct.h"
 %include "ThostFtdcMdApi.h"
 %include "ThostFtdcTraderApi.h"
-// %include "../../wrap/wrap.h"
+%include "../../wrap/wrap.h"
