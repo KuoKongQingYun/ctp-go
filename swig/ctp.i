@@ -70,8 +70,8 @@
 
 %feature("director") CThostFtdcMdSpi; 
 %feature("director") CThostFtdcTraderSpi;
-// %ignore CThostFtdcMdApi;
-// %ignore CThostFtdcTraderApi;
+%ignore CThostFtdcMdApi;
+%ignore CThostFtdcTraderApi;
 %ignore THOST_FTDC_VTC_BankBankToFuture;
 %ignore THOST_FTDC_VTC_BankFutureToBank;
 %ignore THOST_FTDC_VTC_FutureBankToFuture;
